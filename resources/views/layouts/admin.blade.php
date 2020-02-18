@@ -36,7 +36,6 @@
 </head>
 
 <body id="admin-page">
-<h1>Admin</h1>
 
 <div id="wrapper">
 
