@@ -12,8 +12,14 @@
     <title>Admin</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{asset('css/app.css')}}" rel="stylesheet">
-
+    {{-- <link href="{{asset('css/app.css')}}" rel="stylesheet"> --}}
+    <link rel = "stylesheet" type = "text / css" href = "{‌ {asset（ 'css/libs/bootstrap.css'）}}">
+    <link rel = "stylesheet" type = "text / css" href = "{‌ {asset（ 'css/libs/blog-post.css'）}}">
+    <link rel = "stylesheet" type = "text / css" href = "{‌ {asset（ 'css/libs/bootstrap.min.css'）}}">
+    <link rel = "stylesheet" type = "text / css" href = "{‌ {asset（ 'css/libs/font-awesome.css'）}}">
+    <link rel = "stylesheet" type = "text / css" href = "{‌ {asset（ 'css/libs/metisMenu.css'）}}">
+    <link rel = "stylesheet" type = "text / css" href = "{‌ {asset（ 'css/libs/sb-admin-2.css'）}}">
+    <link rel = "stylesheet" type = "text / css" href = "{‌ {asset（ 'css/libs/styles.css'）}}">
     <link href="{{asset('css/libs.css')}}" rel="stylesheet">
 
 
@@ -30,6 +36,7 @@
 </head>
 
 <body id="admin-page">
+<h1>Admin</h1>
 
 <div id="wrapper">
 

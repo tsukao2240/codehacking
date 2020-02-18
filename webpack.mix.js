@@ -15,20 +15,20 @@ mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css');
 
 mix.styles([
-    'resources/assets/css/libs/blog-post.css',
-    'resources/assets/css/libs/bootstrap.css',
-    'resources/assets/css/libs/font-awesome.css',
-    'resources/assets/css/libs/metisMenu.css',
-    'resources/assets/css/libs/sb-admin-2.css'
+    'public/css/libs/bootstrap.css',
+    'public/css/libs/blog-post.css',
+    'public/css/libs/font-awesome.css',
+    'public/css/libs/metisMenu.css',
+    'public/css/libs/sb-admin-2.css'
 
 ], 'public/css/libs.css');
 
 mix.scripts([
-    'resources/assets/js/libs/jquery.js',
-    'resources/assets/js/libs/bootstrap.js',
-    'resources/assets/js/libs/metisMenu.js',
-    'resources/assets/js/sb-admin-2.js',
-    'resources/assets/js/libs/jquery.js',
-    'resources/assets/js/libs/scripts.js'
+    'public/js/libs/jquery.js',
+    'public/js/libs/bootstrap.js',
+    'public/js/libs/bootstrap.min.js',
+    'public/js/libs/metisMenu.js',
+    'public/js/libs/sb-admin-2.js',
+    'public/js/libs/scripts.js'
 
 ], 'public/js/libs.js');
