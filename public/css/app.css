@@ -10884,3 +10884,7 @@ a.text-dark:focus {
   }
 }
 
+#admin-page {
+  padding-top: 0px;
+}
+
