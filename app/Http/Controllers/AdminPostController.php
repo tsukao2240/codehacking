@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Photo;
 use App\Post;
 use App\Category;
+use App\Comment;
 use Illuminate\Http\Request;
 
 class AdminPostController extends Controller
@@ -123,5 +124,12 @@ class AdminPostController extends Controller
         $post->delete();
         return redirect('/admin/posts');
 
+    }
+
+    public function post($id){
+
+        $post = Post::findOrfail($id);
+        $comments = $post->comments()->whereIsActive(1)->get();
+        return view('post',compact('post','comments'));
     }
 }
