@@ -21,7 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/post/{id}',['as'=>'home.post','uses'=>'AdminPostController@post']);
 
-
 Route::group(['middleware'=>'admin'],function(){
     Route::get('/admin',function(){
 
@@ -42,7 +41,4 @@ Route::group(['middleware'=>'auth'],function(){
 
 });
 
-
-
-
-
+Route::delete('/delete/media','AdminMediaController@deleteMedia');
