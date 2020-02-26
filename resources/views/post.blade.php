@@ -47,6 +47,8 @@
     <!-- Comment -->
     @if (count($comments) > 0)
         @foreach ($comments as $comment)
+
+
         <div class="media">
             <a class="pull-left" href="#">
                 <img height="64" class="media-object" src="{{$comment->photo}}" alt="">
@@ -58,7 +60,8 @@
                 {{$comment->body}}
                 @if (count($comment->replies))
                     @foreach ($comment->replies as $reply)
-                            <!-- Nested Comment -->
+                        @if ($reply->is_active === 1)
+                    <!-- Nested Comment -->
                             <div class="media">
                                 <a class="pull-left" href="#">
                                     <img height="64" class="media-object" src="{{$reply->photo}}" alt="">
@@ -70,6 +73,7 @@
                                 </div>
                                 <div class="media-object">{{$reply->body}}</div>
                             </div>
+                         @endif
                     <!-- End Nested Comment -->
                     @endforeach
                 @endif
@@ -77,7 +81,7 @@
                     <button class="toggle-reply btn btn-primary pull-right">Reply</button>
                     <div class="comment-reply">
                         {{ Form::open(['method'=>'POST','action'=>'CommentRepliesController@createReply']) }}
-                            <input type="hidden" name="comment_id" value="{{$reply->id}}">
+                            <input type="hidden" name="comment_id" value="{{$comment->id}}">
                             <div class="form-group">
                                 {{ Form::textarea('body',null,['class'=>'form-control','rows'=>1]) }}
                             </div>
@@ -91,6 +95,7 @@
         </div>
         @endforeach
     @endif
+
     @section('scripts')
         <script>
             $(".comment-reply-container .toggle-reply").click(function(){

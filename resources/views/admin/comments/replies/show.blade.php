@@ -1,6 +1,7 @@
 @section('content')
-    @if ($replies)
-        <h1>Comments</h1>
+@extends('layouts.admin')
+    @if (count($replies) > 0)
+        <h1>Replies</h1>
         <table class="table">
             <thead>
             <tr>
@@ -36,7 +37,7 @@
                         @endif
                     </td>
                     <td>
-                        {{ Form::open(['method'=>'DELETE','action'=>['PostCommentsController@destroy',$reply->id]]) }}
+                        {{ Form::open(['method'=>'DELETE','action'=>['CommentRepliesController@destroy',$reply->id]]) }}
                             <div class="form-group">
                                 {{ Form::submit('Delete',['class'=>'btn btn-danger']) }}
                             </div>
@@ -46,5 +47,7 @@
             @endforeach
             </tbody>
         </table>
+    @else
+        <h1>No Reply</h1>
     @endif
 @endsection
