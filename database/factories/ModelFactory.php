@@ -2,22 +2,8 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Category;
-use App\User;
-use App\Post;
+use App\Model;
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
-
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
 
 $factory->define(App\User::class, function (Faker $faker) {
     return [
@@ -61,12 +47,19 @@ $factory->define(App\Comment::class, function (Faker $faker) {
     return [
         'post_id' => $faker->numberBetween(1,10),
         'is_active' => 1,
-        'author' => $faker->name,
+        'author' => $fake->name,
         'photo' => 'WS000033-4.jpg',
         'email' => $faker->safeEmail,
         'body' => $faker->paragraphs(1,true), // password
     ];
 });
 
-
-
+$factory->define(App\CommentReply::class, function (Faker $faker) {
+    return [
+        'is_active' => 1,
+        'author' => $faker->name,
+        'photo' => 'WS000033-4.jpg',
+        'email' => $faker->safeEmail,
+        'body' => $faker->paragraphs(1,true), // password
+    ];
+});

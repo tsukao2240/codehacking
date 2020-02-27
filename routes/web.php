@@ -17,16 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/post/{id}',['as'=>'home.post','uses'=>'AdminPostController@post']);
 
 Route::group(['middleware'=>'admin'],function(){
-    Route::get('/admin',function(){
-
-        return view('admin.index');
-
-    });
+    Route::get('/admin','AdminController@index');
     Route::resource('admin/users','AdminUserController');
     Route::resource('admin/posts','AdminPostController');
     Route::resource('admin/categories', 'AdminCategoriesController');

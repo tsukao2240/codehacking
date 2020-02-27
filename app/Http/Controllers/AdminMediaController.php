@@ -62,6 +62,7 @@ class AdminMediaController extends Controller
 
         }
         else{
+
             return redirect()->back();
         }
     }
