@@ -66,7 +66,7 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
+                        @endif
                     </ul>
                 </div>
             </div>

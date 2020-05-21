@@ -83,7 +83,7 @@
                         {{ Form::open(['method'=>'POST','action'=>'CommentRepliesController@createReply']) }}
                             <input type="hidden" name="comment_id" value="{{$comment->id}}">
                             <div class="form-group">
-                                {{ Form::textarea('body',null,['class'=>'form-control','rows'=>1]) }}
+                                {{ Form::textarea('body',null,['class'=>'form-control','rows'=>100]) }}
                             </div>
                             <div class="form-group">
                                 {{ Form::submit('Submit',['class'=>'btn btn-primary']) }}
